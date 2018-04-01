@@ -9,7 +9,12 @@ public class InputUtils {
     private static Scanner in = new Scanner(System.in);
 
     public static int inputInt() {
-        int result = in.nextInt();
+        int result;
+        while (!in.hasNextDouble()) {
+            System.out.println(Viewer.INPUT_ERROR);
+            in.nextLine();
+        }
+        result = in.nextInt();
         in.nextLine();
         return result;
     }
